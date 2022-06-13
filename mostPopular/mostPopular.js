@@ -1,11 +1,10 @@
 const divMostPopular = document.querySelector('#mostPopular-inner');
 
 async function getMostPopular() {
-    const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=ac611aa60fbb0355792b075ff8337fbe&language=en-US&page=1').catch(err => console.log(err));
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`);
     const data = await response.json();
     if (data){
         const results = data.results;
-
         results.forEach(article => {
             const articleDiv = document.createElement('div');
             articleDiv.classList.add('article');
