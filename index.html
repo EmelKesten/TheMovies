@@ -7,10 +7,15 @@
     <title>The Movies</title>
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="mostPopular/mostPopular.css">
+    <link rel="stylesheet" href="search/search.css">
+    <link rel="stylesheet" href="nowPlaying/nowPlaying.css">
     <link rel="icon" href="/video-player.ico">
 </head>
 <body>
     <div class="container">
+        <div class="navBar">
+            
+        </div>
         <div id="header">
             <img src="/banner.jpg" alt="">
             <input type="text" placeholder="Search" id="txt-input">
@@ -18,7 +23,11 @@
         </div>
         <div id="mostPopular">
             <h2>Most Popular</h2>
-            <div id="mostPopular-inner"></div>
+            <div id="mostPopular-inner" class="layout"></div>
+        </div>
+        <div id="nowPlaying">
+            <h2>Now Playing In Cinema</h2>
+            <div id="nowPlaying-inner" class="layout"></div>
         </div>
     </div>
 
@@ -26,5 +35,6 @@
     <script src="/index.js"></script>
     <script src="/mostPopular/mostPopular.js"></script>
     <script src="/search/search.js"></script>
+    <script src="/nowPlaying/nowPlaying.js"></script>
 </body>
 </html>

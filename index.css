@@ -31,3 +31,26 @@ body{
     right: 21%;
     z-index: 1;
 }
+
+.article img {
+    width: 100%;
+    height: auto;
+}
+.article {
+    width: 30%;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+.article:hover{
+    transform: scale(1.1);
+}
+
+.layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
