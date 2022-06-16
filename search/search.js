@@ -1,5 +1,5 @@
 const txtInput = document.getElementById('txt-input'); 
-const content = document.querySelector('.content');
+const content = document.querySelector('#search');
 const mostPopular = document.querySelector('#mostPopular');
 const nowPlaying = document.querySelector('#nowPlaying');
 const upComing = document.querySelector('#upComing');
@@ -9,21 +9,22 @@ txtInput.addEventListener("keypress", (event) => {
         search(txtInput);
     }
     else if(txtInput.value.length === 0) {
-        mostPopular.classList.remove('noShow');
-        nowPlaying.classList.remove('noShow');
-        upComing.classList.remove('noShow');
+        content.innerHTML = '';
+        mostPopular();
+        nowPlaying();
+        upComing();
     }
      
 });
 
 async function search(input) {
+    content.innerHTML = '';
     const txtInputValue = input.value;
-    console.log(txtInputValue);
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${txtInputValue}&page=1&include_adult=true`);
     const data = await response.json();
-    mostPopular.classList.add('noShow');
-    nowPlaying.classList.add('noShow');
-    upComing.classList.add('noShow');
+    mostPopular.innerHTML = '';
+    nowPlaying.innerHTML = '';
+    upComing.innerHTML = '';
     if (data){
         const results = data.results;
         results.forEach(article => {
