@@ -8,7 +8,7 @@ txtInput.addEventListener("keypress", (event) => {
     if (txtInput.value.length >= 3) {
         search(txtInput);
     }
-    else if(txtInput.value.length === 0) {
+    else if(txtInput.onkeyup) {
         content.innerHTML = '';
         mostPopular();
         nowPlaying();
@@ -30,12 +30,17 @@ async function search(input) {
         results.forEach(article => {
             const articleDiv = document.createElement('div');
             articleDiv.classList.add('article');
+            articleDiv.id = article.id;
             articleDiv.innerHTML = `
                 <img src="https://image.tmdb.org/t/p/w500/${article.poster_path}" alt="Not able to get poster">
                 <h4>${article.title}</h4>
             `;
             content.appendChild(articleDiv);
         }); 
+        content.addEventListener('click', (e) => {
+            getPopUp(e.target.id);
+            console.log(e.target.id, 'e.target.id');
+        })
     }
 }
 

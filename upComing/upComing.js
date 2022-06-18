@@ -16,6 +16,9 @@ async function getUpComing() {
             }).join('')}
         `;
         upComing.appendChild(upComingDiv);
+        upComing.addEventListener('click', (e) => {
+            getPopUp(e.target.id);
+        })
     }
 }
 

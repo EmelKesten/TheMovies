@@ -17,6 +17,9 @@ async function getNowPlaying() {
                         </div>`
             }).join('')}
         `;
+        nowPlayingDiv.addEventListener('click', (e) => {
+            getPopUp(e.target.id);
+        })
         nowPlaying.appendChild(nowPlayingDiv);
     }
 }
