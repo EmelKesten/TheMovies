@@ -9,7 +9,6 @@ async function getPopUp(id) {
     `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`
   );
   const vidData = await vidResponse.json();
-  console.log(id, "id");
   if (data) {
     const results = data;
     popUpDiv.innerHTML = `
