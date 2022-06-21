@@ -7,11 +7,7 @@ async function getUpComing() {
     upComingDiv.classList.add("upComing-inner");
     upComingDiv.classList.add("layout");
     upComing.innerHTML = "<h2>Up Coming</h2>";
-    upComingDiv.innerHTML = `
-            ${results
-              .map((article) => makeArticle(article))
-              .join("")}
-        `;
+    upComingDiv.innerHTML = results.map((article) => makeArticle(article)).join("")
     upComing.appendChild(upComingDiv);
     upComingDiv.addEventListener("click", (e) => {
       getPopUp(e.target.id);

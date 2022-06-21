@@ -1,4 +1,4 @@
-txtInput.addEventListener("keypress", (event) => {
+txtInput.addEventListener("keydown", (event) => {
   if (txtInput.value.length >= 3) {
     search(txtInput);
   } else {
